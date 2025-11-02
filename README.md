@@ -76,7 +76,7 @@ go run ./cmd/go-reloaded <input_file> <output_file>
 
 **Example:**
 ```bash
-go run ./cmd/go-reloaded testdata/punctuation.txt result.txt
+go run ./cmd/go-reloaded testdata/sample.txt result.txt
 cat result.txt
 ```
 
