@@ -182,6 +182,7 @@ Ignore leading quotes or brackets before the word.
 **Run Tests:**
 ```bash
 make test                    # All tests
+make bench                   # Benchmark tests with memory stats
 go test -v -run TestCases    # Comprehensive edge cases
 go test ./... -count=1       # Force re-run
 ```
