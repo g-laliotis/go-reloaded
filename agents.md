@@ -170,19 +170,23 @@ Ignore leading quotes or brackets before the word.
 
 ## 🧪 Testing Reference
 
-| Type | Files |
-|------|-------|
-| 🔹 **Unit tests** | `internal/transformations/*_test.go` |
-| 🔹 **Integration tests** | `main_test.go` |
+| Type | Files | Description |
+|------|-------|-------------|
+| 🔹 **Unit tests** | `internal/transformations/agents_test.go` | Individual agent testing |
+| 🔹 **Integration tests** | `main_test.go`, `edge_cases_test.go` | End-to-end pipeline testing |
+| 🔹 **Comprehensive cases** | `testcases_test.go` | 12 edge cases with tricky scenarios |
+| 🔹 **Performance tests** | `benchmark_test.go` | Performance monitoring |
+| 🔹 **Test data** | `testcases/case*_input.txt` | Input files for comprehensive testing |
+| 🔹 **Expected outputs** | `testcases/case*_expected_output.txt` | Expected results for validation |
 
 **Run Tests:**
 ```bash
-make test
-# or
-go test ./... -count=1
+make test                    # All tests
+go test -v -run TestCases    # Comprehensive edge cases
+go test ./... -count=1       # Force re-run
 ```
 
-✅ Passing tests confirm all agents follow this specification.
+✅ All tests pass and confirm agents follow this specification exactly.
 
 ---
 

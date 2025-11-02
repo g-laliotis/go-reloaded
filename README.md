@@ -115,13 +115,18 @@ Full agent descriptions and internal specs: [`agents.md`](agents.md).
 
 ## 🧪 Testing
 
-The project includes comprehensive unit, integration, and benchmark tests.
+The project includes comprehensive unit, integration, benchmark, and edge case tests.
 
 **Run all tests:**
 ```bash
 make test
 # or
 go test ./...
+```
+
+**Run comprehensive test cases:**
+```bash
+go test -v -run TestCases
 ```
 
 **Force tests to re-run (ignore cache):**
@@ -133,6 +138,12 @@ go test ./... -count=1
 ```bash
 go test ./... -cover
 ```
+
+**Test Types:**
+- **Unit tests**: `internal/transformations/agents_test.go`
+- **Integration tests**: `main_test.go`, `edge_cases_test.go`
+- **Comprehensive cases**: `testcases_test.go` (12 edge cases)
+- **Performance tests**: `benchmark_test.go`
 
 ---
 
