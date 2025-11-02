@@ -187,7 +187,6 @@ go-reloaded/
 ├── benchmark_test.go       # performance tests
 ├── edge_cases_test.go      # edge case tests
 ├── go.mod
-├── go.sum
 └── main_test.go            # integration tests
 ```
 
