@@ -155,6 +155,7 @@ go test ./... -cover
 | `make run` | Run pipeline on sample data (testdata/cases.txt) |
 | `make build` | Build binary into bin/go-reloaded |
 | `make test` | Run all tests |
+| `make bench` | Run benchmark tests with memory stats |
 | `make fmt` | Format code |
 | `make vet` | Run static analysis |
 | `make clean` | Remove build artifacts |

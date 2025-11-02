@@ -34,6 +34,10 @@ test: ## Run all Go tests
 	@echo "Running tests..."
 	go test ./...
 
+bench: ## Run benchmark tests with memory stats
+	@echo "Running benchmarks..."
+	go test -bench=. -benchmem
+
 fmt: ## Format all Go code
 	@echo "Formatting code..."
 	go fmt ./...
