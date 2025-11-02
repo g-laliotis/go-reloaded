@@ -166,8 +166,6 @@ go-reloaded/
 ├── cmd/
 │   └── go-reloaded/
 │       └── main.go         # CLI entrypoint
-├── docs/
-│   └── index.html          # GitHub Pages site
 ├── internal/
 │   └── transformations/
 │       ├── agents_test.go  # unit tests
@@ -184,7 +182,7 @@ go-reloaded/
 ├── .gitignore
 ├── LICENSE
 ├── Makefile                # build automation
-├── README.md
+├── README.md               # project documentation
 ├── agents.md               # technical specification
 ├── benchmark_test.go       # performance tests
 ├── edge_cases_test.go      # edge case tests
