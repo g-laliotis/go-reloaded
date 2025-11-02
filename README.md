@@ -175,8 +175,11 @@ go-reloaded/
 │       ├── pipeline.go     # pipeline orchestration
 │       ├── punctuation.go  # punctuation fixing agent
 │       └── utils.go        # shared utilities
+├── testcases/
+│   ├── case*_input.txt     # comprehensive test inputs
+│   └── case*_expected_output.txt # expected outputs
 ├── testdata/
-│   ├── cases.txt           # test cases
+│   ├── cases.txt           # basic test cases
 │   ├── punctuation.txt     # punctuation examples
 │   └── sample.txt          # sample input
 ├── .gitignore
@@ -187,7 +190,8 @@ go-reloaded/
 ├── benchmark_test.go       # performance tests
 ├── edge_cases_test.go      # edge case tests
 ├── go.mod
-└── main_test.go            # integration tests
+├── main_test.go            # integration tests
+└── testcases_test.go       # comprehensive test runner
 ```
 
 ---

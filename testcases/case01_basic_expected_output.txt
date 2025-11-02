@@ -1,0 +1,5 @@
+30
+shouting
+Welcome
+An amazing day
+Hello, world!

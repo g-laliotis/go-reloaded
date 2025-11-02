@@ -1,0 +1,5 @@
+1E (hex)
+SHOUTING (low)
+welcome (cap)
+A amazing day
+Hello ,world !

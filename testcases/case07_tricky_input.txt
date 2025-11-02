@@ -1,0 +1,1 @@
+Add 1A (hex) and 101 (bin) to get the total.
