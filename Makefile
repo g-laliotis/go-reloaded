@@ -1,0 +1,47 @@
+# Makefile for go-reloaded project
+APP=go-reloaded
+
+.PHONY: help run build test fmt vet clean
+
+# =============================================================================
+# 🧭 HELP SYSTEM
+# =============================================================================
+# You can add "##" comments after each target; make help will print them.
+# Usage:
+#   make help
+# =============================================================================
+help: ## Show this help
+	@echo "Usage: make <target>"
+	@echo
+	@echo "Available targets:"
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+
+# =============================================================================
+# 🎯 COMMANDS
+# =============================================================================
+
+run: ## Run the project with testdata/cases.txt and print result
+	@echo "Running sample pipeline..."
+	go run ./cmd/$(APP) testdata/sample.txt result.txt
+	@echo "-------------------------------"
+	@cat result.txt
+
+build: ## Build the binary into ./bin/
+	@echo "Building binary..."
+	go build -o bin/$(APP) ./cmd/$(APP)
+
+test: ## Run all Go tests
+	@echo "Running tests..."
+	go test ./...
+
+fmt: ## Format all Go code
+	@echo "Formatting code..."
+	go fmt ./...
+
+vet: ## Run static analysis (vet)
+	@echo "Running go vet..."
+	go vet ./...
+
+clean: ## Remove build artifacts
+	@echo "Cleaning up..."
+	rm -rf bin result.txt
