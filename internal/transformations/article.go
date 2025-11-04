@@ -47,6 +47,12 @@ func (a ArticleAgent) Process(input string) string {
 				}
 			}
 		}
+		// Clean up any remaining markers that weren't processed
+		for j := range words {
+			if words[j] == "A_UP" || words[j] == "A_CAP" {
+				words[j] = "A"
+			}
+		}
 		out = append(out, strings.Join(words, " "))
 	}
 	return strings.Join(out, "\n")

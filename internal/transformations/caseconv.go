@@ -84,6 +84,9 @@ func applyCaseCommand(words *[]string, command string, n int) {
 			// Special handling for articles: mark them for ArticleAgent
 			if res[idx] == "a" {
 				res[idx] = "A_UP" // Special marker for uppercase article
+			} else if res[idx] == "A_CAP" || res[idx] == "A_UP" {
+				// Don't double-process markers, make it uppercase
+				res[idx] = "A_UP"
 			} else {
 				res[idx] = strings.ToUpper(res[idx])
 			}
@@ -93,6 +96,9 @@ func applyCaseCommand(words *[]string, command string, n int) {
 			// Special handling for articles: mark them for ArticleAgent
 			if res[idx] == "a" {
 				res[idx] = "A_CAP" // Special marker for capitalized article
+			} else if res[idx] == "A_CAP" || res[idx] == "A_UP" {
+				// Don't double-process markers, just capitalize them
+				res[idx] = "A_CAP"
 			} else {
 				res[idx] = capitalize(res[idx])
 			}
