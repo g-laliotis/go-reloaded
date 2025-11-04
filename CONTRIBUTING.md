@@ -47,6 +47,10 @@ make test   # Ensure all tests pass
 go-reloaded/
 ├── .github/workflows/        # CI/CD workflows
 ├── cmd/go-reloaded/          # CLI application
+├── docs/                     # GitHub Pages site
+│   ├── .nojekyll             # Bypass Jekyll processing
+│   ├── index.html            # Main site page
+│   └── README.md             # Docs readme
 ├── internal/
 │   ├── transformations/      # Core transformation agents
 │   └── version/              # Version and build information

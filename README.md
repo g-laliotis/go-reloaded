@@ -7,6 +7,7 @@
 [![Made with ❤️ in Go](https://img.shields.io/badge/made%20with-%E2%9D%A4%20in%20Go-00ADD8?logo=go)](#)
 [![Docs](https://img.shields.io/badge/docs-agents.md-blue?logo=readme)](agents.md)
 [![CLI Usage](https://img.shields.io/badge/CLI-Make_Help-orange?logo=gnu-bash)](#makefile-commands)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?logo=github)](https://g-laliotis.github.io/go-reloaded/)
 
 > 📘 See [**agents.md**](agents.md) for detailed technical specification of all pipeline agents.  
 > 💻 Run `make help` for a list of available CLI commands.
@@ -183,6 +184,10 @@ go-reloaded/
 ├── cmd/
 │   └── go-reloaded/
 │       └── main.go         # CLI entrypoint with version support
+├── docs/
+│   ├── .nojekyll           # bypass Jekyll processing
+│   ├── index.html          # GitHub Pages site
+│   └── README.md           # docs folder readme
 ├── internal/
 │   ├── transformations/
 │   │   ├── agents_test.go  # unit tests
