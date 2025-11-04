@@ -23,15 +23,12 @@ func (p PunctuationAgent) Process(input string) string {
 	for _, line := range lines {
 		l := line
 
-		// 1. Fix quotes: remove spaces inside ' ... '
-		l = regexp.MustCompile(`'\s*([^']*?)\s*'`).ReplaceAllString(l, `'$1'`)
-
-		// 2. Normalize ellipses first (protect them from dot rules)
+		// 1. Normalize ellipses first (protect them from dot rules)
 		l = regexp.MustCompile(`\.\s*\.\s*\.`).ReplaceAllString(l, `...`)
 		l = regexp.MustCompile(`\.{4,}`).ReplaceAllString(l, `...`)
 		l = strings.ReplaceAll(l, "...", "ELLIPSIS_PLACEHOLDER")
 
-		// 3. Fix exclamation/question marks
+		// 2. Fix exclamation/question marks
 		for {
 			newL := regexp.MustCompile(`([!?]+)\s+([!?]+)`).ReplaceAllString(l, `$1$2`)
 			if newL == l {
@@ -42,17 +39,22 @@ func (p PunctuationAgent) Process(input string) string {
 		l = regexp.MustCompile(`\s+([!?]+)`).ReplaceAllString(l, `$1`)
 		l = regexp.MustCompile(`([!?]+)([^\s!?])`).ReplaceAllString(l, `$1 $2`)
 
-		// 4. Fix simple punctuation: , . : ;
+		// 3. Fix simple punctuation: , . : ;
 		l = regexp.MustCompile(`\s+([,.:;])`).ReplaceAllString(l, `$1`)
 		l = regexp.MustCompile(`([,.:;])(\S)`).ReplaceAllString(l, `$1 $2`)
 
-		// 5. Restore ellipses and fix their spacing
+		// 4. Restore ellipses and fix their spacing
 		l = strings.ReplaceAll(l, "ELLIPSIS_PLACEHOLDER", "...")
 		l = regexp.MustCompile(`\s+\.{3}`).ReplaceAllString(l, `...`)
 		l = regexp.MustCompile(`\.{3}(\S)`).ReplaceAllString(l, `... $1`)
 
-		// 6. Clean up multiple spaces and trailing spaces
+		// 5. Clean up multiple spaces
 		l = regexp.MustCompile(` {2,}`).ReplaceAllString(l, ` `)
+
+		// 6. Fix quotes: remove spaces inside ' ... ' (do this last)
+		l = regexp.MustCompile(`'\s*([^']*?)\s*'`).ReplaceAllString(l, `'$1'`)
+
+		// 7. Final cleanup - trim trailing spaces
 		l = strings.TrimRight(l, " ")
 
 		out = append(out, l)
