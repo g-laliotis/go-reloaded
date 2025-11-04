@@ -21,15 +21,16 @@ func (a ArticleAgent) Process(input string) string {
 	for _, line := range lines {
 		words := strings.Fields(line)
 		for i := 0; i < len(words)-1; i++ {
-			if (words[i] == "a" || words[i] == "A") {
+			current := words[i]
+			if current == "a" || current == "A" {
 				next := trimLeadingWrappers(words[i+1])
 				first := firstLetterRune(next)
 				// Only change if next word starts with a letter (not number) and is vowel/h
 				if first != 0 && isVowelOrH(first) {
-					if words[i] == "a" {
+					if current == "a" {
 						words[i] = "an"
-					} else {
-						words[i] = "An"
+					} else { // current == "A"
+						words[i] = "AN"
 					}
 				}
 			}
