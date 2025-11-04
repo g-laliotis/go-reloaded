@@ -1,0 +1,1 @@
+a (cap) 101 (bin) errors and a (up) A (hex) warnings occurred
