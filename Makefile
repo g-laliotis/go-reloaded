@@ -1,7 +1,7 @@
 # Makefile for go-reloaded project
 APP=go-reloaded
 
-.PHONY: help run build test fmt vet clean
+.PHONY: help run build test testcases fmt vet clean clear-cache
 
 # =============================================================================
 # 🧭 HELP SYSTEM
@@ -34,6 +34,10 @@ test: ## Run all Go tests
 	@echo "Running tests..."
 	go test ./...
 
+testcases: ## Run comprehensive test cases (24 cases)
+	@echo "Running comprehensive test cases..."
+	go test -v -run TestCases
+
 bench: ## Run benchmark tests with memory stats
 	@echo "Running benchmarks..."
 	go test -bench=. -benchmem
@@ -49,3 +53,7 @@ vet: ## Run static analysis (vet)
 clean: ## Remove build artifacts
 	@echo "Cleaning up..."
 	rm -rf bin result.txt
+
+clear-cache: ## Clear Go build and test cache
+	@echo "Clearing Go cache..."
+	go clean -cache -testcache -modcache

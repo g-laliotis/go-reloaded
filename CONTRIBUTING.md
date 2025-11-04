@@ -28,17 +28,19 @@ Thank you for your interest in contributing to go-reloaded! This document provid
 make test
 
 # Run specific test types
-go test -v -run TestCases        # Comprehensive test cases
+make testcases                   # Comprehensive test cases (24 cases)
 go test -v ./internal/...        # Unit tests
 make bench                       # Benchmark tests
+make clear-cache                 # Clear Go cache
 ```
 
 ### Code Quality
 Before submitting changes:
 ```bash
-make fmt    # Format code
-make vet    # Static analysis
-make test   # Ensure all tests pass
+make fmt         # Format code
+make vet         # Static analysis
+make testcases   # Run comprehensive test cases
+make test        # Run all tests
 ```
 
 ## Project Structure
@@ -109,7 +111,7 @@ go-reloaded/
 2. Make your changes
 3. Run tests and quality checks:
    ```bash
-   make test && make fmt && make vet
+   make testcases && make fmt && make vet
    ```
 4. Commit with descriptive messages:
    ```bash

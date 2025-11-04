@@ -132,6 +132,8 @@ go test ./...
 
 **Run comprehensive test cases:**
 ```bash
+make testcases
+# or
 go test -v -run TestCases
 ```
 
@@ -161,11 +163,12 @@ go test ./... -cover
 | `make run` | Run pipeline on sample data (testdata/cases.txt) |
 | `make build` | Build binary into bin/go-reloaded |
 | `make test` | Run all tests |
+| `make testcases` | Run comprehensive test cases (24 cases) |
 | `make bench` | Run benchmark tests with memory stats |
 | `make fmt` | Format code |
 | `make vet` | Run static analysis |
 | `make clean` | Remove build artifacts |
-| `make clear-cache` | (Optional) Wipe Go build/test caches |
+| `make clear-cache` | Clear Go build and test cache |
 
 Run the help menu any time:
 ```bash
