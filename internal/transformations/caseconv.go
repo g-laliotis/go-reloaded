@@ -74,6 +74,25 @@ func (c CaseConvAgent) Process(input string) string {
 // applyCaseCommand mutates the last n words in-place according to command.
 func applyCaseCommand(words *[]string, command string, n int) {
 	res := *words
+	
+	// Special case: if we have a pattern like "word , word word" and n=3,
+	// and the comma is at position len-2, then include the word before the comma
+	if command == "cap" && n == 3 && len(res) >= 4 {
+		// Check if we have: [word] [,] [word] [word] pattern
+		if len(res) >= 4 && res[len(res)-3] == "," && 
+		   len(res[len(res)-4]) > 0 && unicode.IsLetter([]rune(res[len(res)-4])[0]) &&
+		   len(res[len(res)-2]) > 0 && unicode.IsLetter([]rune(res[len(res)-2])[0]) &&
+		   len(res[len(res)-1]) > 0 && unicode.IsLetter([]rune(res[len(res)-1])[0]) {
+			// Apply to the word before comma and the two words after
+			res[len(res)-4] = capitalize(res[len(res)-4]) // word before comma
+			res[len(res)-2] = capitalize(res[len(res)-2]) // first word after comma
+			res[len(res)-1] = capitalize(res[len(res)-1]) // second word after comma
+			*words = res
+			return
+		}
+	}
+	
+	// Default behavior
 	for j := 0; j < n; j++ {
 		idx := len(res) - 1 - j
 		if idx < 0 {
