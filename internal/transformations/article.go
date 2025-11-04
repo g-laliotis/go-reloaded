@@ -22,15 +22,27 @@ func (a ArticleAgent) Process(input string) string {
 		words := strings.Fields(line)
 		for i := 0; i < len(words)-1; i++ {
 			current := words[i]
-			if current == "a" || current == "A" {
+			if current == "a" || current == "A" || current == "A_UP" || current == "A_CAP" {
 				next := trimLeadingWrappers(words[i+1])
 				first := firstLetterRune(next)
 				// Only change if next word starts with a letter (not number) and is vowel/h
 				if first != 0 && isVowelOrH(first) {
-					if current == "a" {
+					switch current {
+					case "a":
 						words[i] = "an"
-					} else { // current == "A"
-						words[i] = "AN"
+					case "A":
+						words[i] = "An" // Default A becomes An
+					case "A_UP":
+						words[i] = "AN" // (up) marker becomes AN
+					case "A_CAP":
+						words[i] = "An" // (cap) marker becomes An
+					}
+				} else {
+					// If not followed by vowel, clean up markers
+					if current == "A_UP" {
+						words[i] = "A"
+					} else if current == "A_CAP" {
+						words[i] = "A"
 					}
 				}
 			}

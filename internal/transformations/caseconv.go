@@ -81,11 +81,21 @@ func applyCaseCommand(words *[]string, command string, n int) {
 		}
 		switch command {
 		case "up":
-			res[idx] = strings.ToUpper(res[idx])
+			// Special handling for articles: mark them for ArticleAgent
+			if res[idx] == "a" {
+				res[idx] = "A_UP" // Special marker for uppercase article
+			} else {
+				res[idx] = strings.ToUpper(res[idx])
+			}
 		case "low":
 			res[idx] = strings.ToLower(res[idx])
 		case "cap":
-			res[idx] = capitalize(res[idx])
+			// Special handling for articles: mark them for ArticleAgent
+			if res[idx] == "a" {
+				res[idx] = "A_CAP" // Special marker for capitalized article
+			} else {
+				res[idx] = capitalize(res[idx])
+			}
 		}
 	}
 	*words = res
