@@ -51,7 +51,9 @@ func (p PunctuationAgent) Process(input string) string {
 		// 5. Clean up multiple spaces
 		l = regexp.MustCompile(` {2,}`).ReplaceAllString(l, ` `)
 
-		// 6. Fix quotes: remove spaces inside ' ... ' (do this last)
+		// 6. Fix quotes: remove spaces inside ' ... ' and " ... " (do this last)
+		// Handle nested quotes: first fix double quotes, then single quotes
+		l = regexp.MustCompile(`"\s*([^"]*?)\s*"`).ReplaceAllString(l, `"$1"`)
 		l = regexp.MustCompile(`'\s*([^']*?)\s*'`).ReplaceAllString(l, `'$1'`)
 
 		// 7. Final cleanup - trim trailing spaces
