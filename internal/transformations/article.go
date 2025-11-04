@@ -22,35 +22,39 @@ func (a ArticleAgent) Process(input string) string {
 		words := strings.Fields(line)
 		for i := 0; i < len(words)-1; i++ {
 			current := words[i]
-			if current == "a" || current == "A" || current == "A_UP" || current == "A_CAP" {
+			// Handle articles that might be attached to quotes
+			cleanCurrent := strings.Trim(current, "'\"")
+			if current == "a" || current == "A" || current == "A_UP" || current == "A_CAP" || 
+			   cleanCurrent == "a" || cleanCurrent == "A" || cleanCurrent == "A_UP" || cleanCurrent == "A_CAP" {
 				next := trimLeadingWrappers(words[i+1])
 				first := firstLetterRune(next)
 				// Only change if next word starts with a letter (not number) and is vowel/h
 				if first != 0 && isVowelOrH(first) {
-					switch current {
+					switch cleanCurrent {
 					case "a":
-						words[i] = "an"
+						words[i] = strings.Replace(words[i], "a", "an", 1)
 					case "A":
-						words[i] = "An" // Default A becomes An
+						words[i] = strings.Replace(words[i], "A", "An", 1)
 					case "A_UP":
-						words[i] = "AN" // (up) marker becomes AN
+						words[i] = strings.Replace(words[i], "A_UP", "AN", 1)
 					case "A_CAP":
-						words[i] = "An" // (cap) marker becomes An
+						words[i] = strings.Replace(words[i], "A_CAP", "An", 1)
 					}
 				} else {
 					// If not followed by vowel, clean up markers
-					if current == "A_UP" {
-						words[i] = "A"
-					} else if current == "A_CAP" {
-						words[i] = "A"
+					if cleanCurrent == "A_UP" {
+						words[i] = strings.Replace(words[i], "A_UP", "A", 1)
+					} else if cleanCurrent == "A_CAP" {
+						words[i] = strings.Replace(words[i], "A_CAP", "A", 1)
 					}
 				}
 			}
 		}
 		// Clean up any remaining markers that weren't processed
 		for j := range words {
-			if words[j] == "A_UP" || words[j] == "A_CAP" {
-				words[j] = "A"
+			cleanWord := strings.Trim(words[j], "'\"")
+			if cleanWord == "A_UP" || cleanWord == "A_CAP" {
+				words[j] = strings.Replace(words[j], cleanWord, "A", 1)
 			}
 		}
 		out = append(out, strings.Join(words, " "))
