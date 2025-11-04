@@ -174,7 +174,7 @@ Ignore leading quotes or brackets before the word.
 |------|-------|-------------|
 | 🔹 **Unit tests** | `internal/transformations/agents_test.go` | Individual agent testing |
 | 🔹 **Integration tests** | `main_test.go`, `edge_cases_test.go` | End-to-end pipeline testing |
-| 🔹 **Comprehensive cases** | `testcases_test.go` | 12 edge cases with tricky scenarios |
+| 🔹 **Comprehensive cases** | `testcases_test.go` | 24 edge cases with tricky scenarios |
 | 🔹 **Performance tests** | `benchmark_test.go` | Performance monitoring |
 | 🔹 **Test data** | `testcases/case*_input.txt` | Input files for comprehensive testing |
 | 🔹 **Expected outputs** | `testcases/case*_expected_output.txt` | Expected results for validation |

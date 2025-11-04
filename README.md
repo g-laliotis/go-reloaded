@@ -65,6 +65,11 @@ go version
 go mod tidy
 ```
 
+**Check version**
+```bash
+go run ./cmd/go-reloaded --version
+```
+
 ---
 
 ## 🚦 Usage
@@ -177,32 +182,36 @@ go-reloaded/
 │       └── pages.yml       # GitHub Pages deployment
 ├── cmd/
 │   └── go-reloaded/
-│       └── main.go         # CLI entrypoint
+│       └── main.go         # CLI entrypoint with version support
 ├── internal/
-│   └── transformations/
-│       ├── agents_test.go  # unit tests
-│       ├── article.go      # article correction agent
-│       ├── caseconv.go     # case conversion agent
-│       ├── hexbin.go       # hex/binary conversion agent
-│       ├── pipeline.go     # pipeline orchestration
-│       ├── punctuation.go  # punctuation fixing agent
-│       └── utils.go        # shared utilities
+│   ├── transformations/
+│   │   ├── agents_test.go  # unit tests
+│   │   ├── article.go      # article correction agent
+│   │   ├── caseconv.go     # case conversion agent
+│   │   ├── hexbin.go       # hex/binary conversion agent
+│   │   ├── pipeline.go     # pipeline orchestration
+│   │   ├── punctuation.go  # punctuation fixing agent
+│   │   └── utils.go        # shared utilities
+│   └── version/
+│       └── version.go      # version and build info
 ├── testcases/
-│   ├── case*_input.txt     # comprehensive test inputs
+│   ├── case*_input.txt     # comprehensive test inputs (24 cases)
 │   └── case*_expected_output.txt # expected outputs
 ├── testdata/
 │   ├── cases.txt           # basic test cases
 │   ├── punctuation.txt     # punctuation examples
 │   └── sample.txt          # sample input
 ├── .gitignore
+├── benchmark_test.go       # performance tests
+├── CHANGELOG.md            # version history
+├── CONTRIBUTING.md         # contribution guidelines
+├── edge_cases_test.go      # edge case tests
+├── go.mod
 ├── LICENSE
+├── main_test.go            # integration tests
 ├── Makefile                # build automation
 ├── README.md               # project documentation
 ├── agents.md               # technical specification
-├── benchmark_test.go       # performance tests
-├── edge_cases_test.go      # edge case tests
-├── go.mod
-├── main_test.go            # integration tests
 └── testcases_test.go       # comprehensive test runner
 ```
 
@@ -210,13 +219,15 @@ go-reloaded/
 
 ## 🧑💻 Contributing
 
-Pull requests and audits are welcome.
+Pull requests and audits are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-Please follow these guidelines:
+**Quick start:**
 - Run `make fmt` and `make vet` before committing
 - Add or update tests for any changes
 - Keep agents single-purpose; don't mix rules in one agent
 - Update `agents.md` if your change affects behavior
+
+**Version history:** See [CHANGELOG.md](CHANGELOG.md) for release notes and changes.
 
 ---
 

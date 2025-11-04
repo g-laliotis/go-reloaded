@@ -14,12 +14,20 @@ import (
 	"os"
 
 	"go-reloaded/internal/transformations"
+	"go-reloaded/internal/version"
 )
 
 func main() {
+	// Handle version flag
+	if len(os.Args) == 2 && (os.Args[1] == "--version" || os.Args[1] == "-v") {
+		fmt.Println(version.GetBuildInfo())
+		return
+	}
+
 	// Expect exactly 2 arguments: input and output paths.
 	if len(os.Args) != 3 {
-		fmt.Println("Usage: go run ./cmd/go-reloaded <input_file> <output_file>")
+		fmt.Printf("Usage: %s <input_file> <output_file>\n", os.Args[0])
+		fmt.Printf("       %s --version\n", os.Args[0])
 		os.Exit(1)
 	}
 	inputPath := os.Args[1]
