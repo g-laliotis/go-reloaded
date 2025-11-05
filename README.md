@@ -234,7 +234,7 @@ Pull requests and audits are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for
 - Run `make fmt` and `make vet` before committing
 - Add or update tests for any changes
 - Keep agents single-purpose; don't mix rules in one agent
-- Update `agents.md` if your change affects behavior
+- Update `AGENTS.md` if your change affects behavior
 
 **Version history:** See [CHANGELOG.md](CHANGELOG.md) for release notes and changes.
 
