@@ -150,7 +150,7 @@ go test ./... -cover
 **Test Types:**
 - **Unit tests**: `internal/transformations/agents_test.go`
 - **Integration tests**: `main_test.go`, `edge_cases_test.go`
-- **Comprehensive cases**: `testcases_test.go` (12 edge cases)
+- **Comprehensive cases**: `testcases_test.go` (24 comprehensive cases)
 - **Performance tests**: `benchmark_test.go`
 
 ---
