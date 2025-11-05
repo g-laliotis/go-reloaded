@@ -82,13 +82,13 @@ go run ./cmd/go-reloaded <input_file> <output_file>
 
 **Example:**
 ```bash
-go run ./cmd/go-reloaded testdata/sample.txt result.txt
+go run ./cmd/go-reloaded testdata/samples/sample.txt result.txt
 cat result.txt
 ```
 
 **Example transformation:**
 
-*Input (testdata/punctuation.txt)*
+*Input (testdata/samples/punctuation.txt)*
 ```
 Punctuation tests are ... kinda boring ,what do you think ?
 As Elton John said: ' I am the most well-known homosexual in the world '
@@ -160,7 +160,7 @@ go test ./... -cover
 | Command | Description |
 |---------|-------------|
 | `make help` | Show help menu with all commands |
-| `make run` | Run pipeline on sample data (testdata/cases.txt) |
+| `make run` | Run pipeline on sample data (testdata/samples/) |
 | `make build` | Build binary into bin/go-reloaded |
 | `make test` | Run all tests |
 | `make testcases` | Run comprehensive test cases (24 cases) |
@@ -202,13 +202,14 @@ go-reloaded/
 │   │   └── utils.go        # shared utilities
 │   └── version/
 │       └── version.go      # version and build info
-├── testcases/
-│   ├── case*_input.txt     # comprehensive test inputs (24 cases)
-│   └── case*_expected_output.txt # expected outputs
 ├── testdata/
-│   ├── cases.txt           # basic test cases
-│   ├── punctuation.txt     # punctuation examples
-│   └── sample.txt          # sample input
+│   ├── comprehensive/      # comprehensive test cases (24 cases)
+│   │   ├── case*_input.txt     # test inputs
+│   │   └── case*_expected_output.txt # expected outputs
+│   └── samples/            # sample files for demos
+│       ├── cases.txt       # basic test cases
+│       ├── punctuation.txt # punctuation examples
+│       └── sample.txt      # sample input
 ├── .gitignore
 ├── benchmark_test.go       # performance tests
 ├── CHANGELOG.md            # version history

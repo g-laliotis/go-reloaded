@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unit tests for individual agents (internal/transformations/agents_test.go)
 - Integration tests for full pipeline (main_test.go, edge_cases_test.go)
 - Performance benchmarks (benchmark_test.go)
-- Comprehensive test runner (testcases_test.go)
+- Comprehensive test runner (testcases_test.go) with consolidated testdata structure
 - Edge case validation and boundary testing
 - 100% test coverage for core functionality
 

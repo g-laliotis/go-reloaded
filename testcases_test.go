@@ -10,7 +10,7 @@ import (
 )
 
 func TestCases(t *testing.T) {
-	testDir := "testcases"
+	testDir := "testdata/comprehensive"
 	
 	// Find all input files
 	inputFiles, err := filepath.Glob(filepath.Join(testDir, "*_input.txt"))

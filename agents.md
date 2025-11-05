@@ -94,7 +94,7 @@ UNIT_TESTS: internal/transformations/agents_test.go
 INTEGRATION_TESTS: main_test.go, edge_cases_test.go
 COMPREHENSIVE_TESTS: testcases_test.go (24 cases)
 PERFORMANCE_TESTS: benchmark_test.go
-TEST_DATA: testcases/*.txt files
+TEST_DATA: testdata/comprehensive/*.txt files
 COMMANDS:
 - make test
 - make testcases  

@@ -20,9 +20,9 @@ help: ## Show this help
 # 🎯 COMMANDS
 # =============================================================================
 
-run: ## Run the project with testdata/cases.txt and print result
+run: ## Run the project with sample data and print result
 	@echo "Running sample pipeline..."
-	go run ./cmd/$(APP) testdata/sample.txt result.txt
+	go run ./cmd/$(APP) testdata/samples/sample.txt result.txt
 	@echo "-------------------------------"
 	@cat result.txt
 

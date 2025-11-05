@@ -56,8 +56,9 @@ go-reloaded/
 ├── internal/
 │   ├── transformations/      # Core transformation agents
 │   └── version/              # Version and build information
-├── testcases/                # Comprehensive test cases (24 cases)
-├── testdata/                 # Test fixtures
+├── testdata/                 # Test data and fixtures
+│   ├── comprehensive/        # Comprehensive test cases (24 cases)
+│   └── samples/              # Sample files for demos
 ├── *_test.go                 # Various test files
 ├── AGENTS.md                 # Technical specification
 ├── CHANGELOG.md              # Version history
@@ -82,7 +83,7 @@ go-reloaded/
 5. Update `AGENTS.md` documentation
 
 ### Adding Test Cases
-1. Add input/output files to `testcases/`
+1. Add input/output files to `testdata/comprehensive/`
 2. Follow naming convention: `caseXX_name_input.txt` / `caseXX_name_expected_output.txt`
 3. Test cases are automatically discovered by `testcases_test.go`
 
