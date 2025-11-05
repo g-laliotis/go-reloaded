@@ -59,7 +59,7 @@ go-reloaded/
 ├── testcases/                # Comprehensive test cases (24 cases)
 ├── testdata/                 # Test fixtures
 ├── *_test.go                 # Various test files
-├── agents.md                 # Technical specification
+├── AGENTS.md                 # Technical specification
 ├── CHANGELOG.md              # Version history
 ├── CONTRIBUTING.md           # This file
 ├── Makefile                  # Build automation
@@ -79,7 +79,7 @@ go-reloaded/
    ```
 3. Add to pipeline in `pipeline.go`
 4. Add unit tests
-5. Update `agents.md` documentation
+5. Update `AGENTS.md` documentation
 
 ### Adding Test Cases
 1. Add input/output files to `testcases/`

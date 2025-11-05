@@ -5,11 +5,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-✓_passing-success)](#)
 [![Made with ❤️ in Go](https://img.shields.io/badge/made%20with-%E2%9D%A4%20in%20Go-00ADD8?logo=go)](#)
-[![Docs](https://img.shields.io/badge/docs-agents.md-blue?logo=readme)](agents.md)
+[![Docs](https://img.shields.io/badge/docs-AGENTS.md-blue?logo=readme)](AGENTS.md)
 [![CLI Usage](https://img.shields.io/badge/CLI-Make_Help-orange?logo=gnu-bash)](#makefile-commands)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?logo=github)](https://g-laliotis.github.io/go-reloaded/)
 
-> 📘 See [**agents.md**](agents.md) for detailed technical specification of all pipeline agents.  
+> 📘 See [**AGENTS.md**](AGENTS.md) for detailed technical specification of all pipeline agents.  
 > 💻 Run `make help` for a list of available CLI commands.
 
 ---
@@ -115,7 +115,7 @@ BAMM!! Are you serious!? yes... right now
 | ✍️ **PunctuationAgent** | Fixes punctuation spacing & quotes | `,what ?!` → `, what?!` |
 | 📰 **ArticleAgent** | Changes `a/A` → `an/An` before vowels or 'h' | `a apple` → `an apple` |
 
-Full agent descriptions and internal specs: [`agents.md`](agents.md).
+Full agent descriptions and internal specs: [`AGENTS.md`](AGENTS.md).
 
 ---
 
@@ -219,7 +219,7 @@ go-reloaded/
 ├── main_test.go            # integration tests
 ├── Makefile                # build automation
 ├── README.md               # project documentation
-├── agents.md               # technical specification
+├── AGENTS.md               # technical specification
 └── testcases_test.go       # comprehensive test runner
 ```
 
