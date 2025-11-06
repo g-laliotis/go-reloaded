@@ -66,9 +66,7 @@ jobs:
         go-version: '1.22'
     
     - name: Run tests with coverage
-      run: go test -v -coverprofile=coverage.out ./...
+      run: go test -coverprofile=coverage.out ./...
     
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.out
+    - name: Display coverage
+      run: go tool cover -func=coverage.out
