@@ -1,0 +1,92 @@
+name: Bug Report
+description: File a bug report to help us improve
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of go-reloaded are you running?
+      placeholder: "1.0.0"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true
+      
+  - type: input
+    id: go-version
+    attributes:
+      label: Go Version
+      description: What version of Go are you using?
+      placeholder: "go version go1.22.0"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of what the bug is.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Run command '...'
+        2. With input file '...'
+        3. See error
+    validations:
+      required: true
+      
+  - type: textarea
+    id: input-file
+    attributes:
+      label: Input file content
+      description: If applicable, provide the content of your input file
+      render: text
+      
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error logs
+      description: Please copy and paste any relevant log output
+      render: shell
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
