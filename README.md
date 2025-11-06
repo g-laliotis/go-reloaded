@@ -6,6 +6,7 @@
 [![Tests](https://img.shields.io/badge/tests-✓_passing-success)](#)
 [![Made with ❤️ in Go](https://img.shields.io/badge/made%20with-%E2%9D%A4%20in%20Go-00ADD8?logo=go)](#)
 [![Docs](https://img.shields.io/badge/docs-AGENTS.md-blue?logo=readme)](AGENTS.md)
+[![Presentation](https://img.shields.io/badge/presentation-guide-purple?logo=presentation)](PRESENTATION_GUIDE.md)
 [![CLI Usage](https://img.shields.io/badge/CLI-Make_Help-orange?logo=gnu-bash)](#makefile-commands)
 [![Security](https://img.shields.io/badge/security-policy-red?logo=shield)](SECURITY.md)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4?logo=handshake)](CODE_OF_CONDUCT.md)
@@ -236,6 +237,7 @@ go-reloaded/
 ├── LICENSE
 ├── main_test.go            # integration tests
 ├── Makefile                # build automation
+├── PRESENTATION_GUIDE.md   # stakeholder briefing document
 ├── README.md               # project documentation
 ├── SECURITY.md             # security policy
 └── testcases_test.go       # comprehensive test runner
