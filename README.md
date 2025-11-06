@@ -22,6 +22,13 @@ It reads an input text file, applies a sequence of smart transformations ("agent
 
 This project demonstrates clean modular Go design, testability, and readable rule-based text processing.
 
+**Professional Features:**
+- 🔒 **Security Policy** - Vulnerability reporting process
+- 🤝 **Code of Conduct** - Community guidelines
+- 📋 **Issue Templates** - Structured bug reports and feature requests
+- 🔄 **CI/CD Pipeline** - Automated testing on Go 1.22 & 1.23
+- 📚 **Comprehensive Documentation** - Technical specs and contribution guides
+
 ---
 
 ## 🏗️ Architecture
@@ -182,8 +189,13 @@ make help
 ```
 go-reloaded/
 ├── .github/
-│   └── workflows/
-│       └── pages.yml       # GitHub Pages deployment
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.yml      # Bug report form
+│   │   └── feature_request.yml # Feature request form
+│   ├── workflows/
+│   │   ├── pages.yml           # GitHub Pages deployment
+│   │   └── test.yml            # CI/CD testing workflow
+│   └── PULL_REQUEST_TEMPLATE.md # Pull request template
 ├── cmd/
 │   └── go-reloaded/
 │       └── main.go         # CLI entrypoint with version support
@@ -211,8 +223,10 @@ go-reloaded/
 │       ├── punctuation.txt # punctuation examples
 │       └── sample.txt      # sample input
 ├── .gitignore
+├── AGENTS.md               # technical specification
 ├── benchmark_test.go       # performance tests
 ├── CHANGELOG.md            # version history
+├── CODE_OF_CONDUCT.md      # community guidelines
 ├── CONTRIBUTING.md         # contribution guidelines
 ├── edge_cases_test.go      # edge case tests
 ├── go.mod
@@ -220,7 +234,7 @@ go-reloaded/
 ├── main_test.go            # integration tests
 ├── Makefile                # build automation
 ├── README.md               # project documentation
-├── AGENTS.md               # technical specification
+├── SECURITY.md             # security policy
 └── testcases_test.go       # comprehensive test runner
 ```
 

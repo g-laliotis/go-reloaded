@@ -47,7 +47,10 @@ make test        # Run all tests
 
 ```
 go-reloaded/
-├── .github/workflows/        # CI/CD workflows
+├── .github/
+│   ├── ISSUE_TEMPLATE/       # Issue templates
+│   ├── workflows/            # CI/CD workflows
+│   └── PULL_REQUEST_TEMPLATE.md # PR template
 ├── cmd/go-reloaded/          # CLI application
 ├── docs/                     # GitHub Pages site
 │   ├── .nojekyll             # Bypass Jekyll processing
@@ -62,9 +65,11 @@ go-reloaded/
 ├── *_test.go                 # Various test files
 ├── AGENTS.md                 # Technical specification
 ├── CHANGELOG.md              # Version history
+├── CODE_OF_CONDUCT.md        # Community guidelines
 ├── CONTRIBUTING.md           # This file
 ├── Makefile                  # Build automation
-└── README.md                 # Project documentation
+├── README.md                 # Project documentation
+└── SECURITY.md               # Security policy
 ```
 
 ## Adding New Features
@@ -132,11 +137,15 @@ Use conventional commits:
 
 ## Questions?
 
-Feel free to open an issue for:
-- Bug reports
-- Feature requests
-- Questions about the codebase
-- Clarification on requirements
+Feel free to open an issue using our templates:
+- **Bug reports**: Use the bug report template
+- **Feature requests**: Use the feature request template
+- **Security issues**: Follow the [Security Policy](SECURITY.md)
+- **General questions**: Open a discussion or issue
+
+## Community
+
+This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
 
 ## License
 
