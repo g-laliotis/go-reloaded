@@ -1,4 +1,4 @@
-name: CI
+name: Tests
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
     - name: Run comprehensive test cases
       run: go test -v -run TestCases
     
-    - name: Run tests with coverage
+    - name: Show coverage
       run: go test -cover ./...
     
     - name: Run benchmarks
@@ -50,4 +50,3 @@ jobs:
     
     - name: Build
       run: go build -v ./cmd/go-reloaded
-
