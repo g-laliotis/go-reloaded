@@ -24,8 +24,8 @@ func (a ArticleAgent) Process(input string) string {
 			current := words[i]
 			// Handle articles that might be attached to quotes
 			cleanCurrent := strings.Trim(current, "'\"")
-			if current == "a" || current == "A" || current == "A_UP" || current == "A_CAP" || 
-			   cleanCurrent == "a" || cleanCurrent == "A" || cleanCurrent == "A_UP" || cleanCurrent == "A_CAP" {
+			if current == "a" || current == "A" || current == "A_UP" || current == "A_CAP" ||
+				cleanCurrent == "a" || cleanCurrent == "A" || cleanCurrent == "A_UP" || cleanCurrent == "A_CAP" {
 				next := trimLeadingWrappers(words[i+1])
 				first := firstLetterRune(next)
 				// Only change if next word starts with a letter (not number) and is vowel/h

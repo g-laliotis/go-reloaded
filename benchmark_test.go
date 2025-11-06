@@ -22,9 +22,9 @@ func TestLargeInput(t *testing.T) {
 		lines[i] = "test line with 1A (hex) and punctuation ... ok ?"
 	}
 	input := strings.Join(lines, "\n")
-	
+
 	result := transformations.RunPipeline(input)
-	
+
 	// Should contain converted hex and fixed punctuation
 	if !strings.Contains(result, "26") || !strings.Contains(result, "ok?") {
 		t.Error("Large input processing failed")

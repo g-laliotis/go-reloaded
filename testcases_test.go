@@ -11,7 +11,7 @@ import (
 
 func TestCases(t *testing.T) {
 	testDir := "testdata/comprehensive"
-	
+
 	// Find all input files
 	inputFiles, err := filepath.Glob(filepath.Join(testDir, "*_input.txt"))
 	if err != nil {
@@ -41,7 +41,7 @@ func TestCases(t *testing.T) {
 
 			// Compare
 			if actual != string(expected) {
-				t.Errorf("Case %s failed:\nInput:\n%s\nExpected:\n%s\nActual:\n%s", 
+				t.Errorf("Case %s failed:\nInput:\n%s\nExpected:\n%s\nActual:\n%s",
 					baseName, string(input), string(expected), actual)
 			}
 		})

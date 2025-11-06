@@ -66,7 +66,7 @@ func TestArticleAgent(t *testing.T) {
 	}{
 		{"a apple", "an apple"},
 		{"A honest", "An honest"},
-		{"a car", "a car"}, // should not change
+		{"a car", "a car"},       // should not change
 		{"a 8-hour", "a 8-hour"}, // should not change (starts with number)
 	}
 

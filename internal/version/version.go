@@ -9,10 +9,10 @@ import (
 const (
 	// Version is the current version of go-reloaded
 	Version = "1.0.0"
-	
+
 	// Name is the application name
 	Name = "go-reloaded"
-	
+
 	// Description is a brief description of the application
 	Description = "A command-line text transformation tool with pipeline architecture"
 )
@@ -37,7 +37,7 @@ func GetBuildInfo() BuildInfo {
 
 // String returns a formatted version string
 func (b BuildInfo) String() string {
-	return fmt.Sprintf("%s v%s (built with %s for %s/%s)", 
+	return fmt.Sprintf("%s v%s (built with %s for %s/%s)",
 		Name, b.Version, b.GoVersion, b.OS, b.Arch)
 }
 
