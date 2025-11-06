@@ -7,6 +7,8 @@
 [![Made with ❤️ in Go](https://img.shields.io/badge/made%20with-%E2%9D%A4%20in%20Go-00ADD8?logo=go)](#)
 [![Docs](https://img.shields.io/badge/docs-AGENTS.md-blue?logo=readme)](AGENTS.md)
 [![CLI Usage](https://img.shields.io/badge/CLI-Make_Help-orange?logo=gnu-bash)](#makefile-commands)
+[![Security](https://img.shields.io/badge/security-policy-red?logo=shield)](SECURITY.md)
+[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4?logo=handshake)](CODE_OF_CONDUCT.md)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?logo=github)](https://g-laliotis.github.io/go-reloaded/)
 
 > 📘 See [**AGENTS.md**](AGENTS.md) for detailed technical specification of all pipeline agents.  
