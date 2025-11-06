@@ -30,6 +30,9 @@ jobs:
     - name: Run comprehensive test cases
       run: go test -v -run TestCases
     
+    - name: Run tests with coverage
+      run: go test -cover ./...
+    
     - name: Run benchmarks
       run: go test -bench=. -benchtime=1s
     
