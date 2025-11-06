@@ -1,4 +1,4 @@
-name: Tests
+name: Build and Test
 
 on:
   push:
@@ -7,45 +7,40 @@ on:
     branches: [ master, main ]
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         go-version: ['1.22', '1.23']
     
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
     
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
         go-version: ${{ matrix.go-version }}
     
-    - name: Verify dependencies
+    - name: Verify Go modules
       run: go mod verify
     
-    - name: Run tests
-      run: go test -v ./...
+    - name: Run all tests
+      run: go test ./...
     
     - name: Run comprehensive test cases
-      run: go test -v -run TestCases
+      run: go test -run TestCases
     
-
-    
-    - name: Run benchmarks
-      run: go test -bench=. -benchtime=1s
-    
-    - name: Check formatting
+    - name: Check code formatting
       run: |
-        unformatted=$(gofmt -s -l .)
-        if [ -n "$unformatted" ]; then
-          echo "Code is not formatted properly:"
-          echo "$unformatted"
+        if [ -n "$(gofmt -s -l .)" ]; then
+          echo "Code formatting issues found:"
+          gofmt -s -l .
           exit 1
         fi
     
-    - name: Run go vet
+    - name: Run static analysis
       run: go vet ./...
     
-    - name: Build
+    - name: Build application
       run: go build -v ./cmd/go-reloaded
