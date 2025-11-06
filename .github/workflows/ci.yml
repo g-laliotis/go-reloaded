@@ -31,13 +31,14 @@ jobs:
       run: go test -v -run TestCases
     
     - name: Run benchmarks
-      run: go test -bench=. -benchmem
+      run: go test -bench=. -benchtime=1s
     
     - name: Check formatting
       run: |
-        if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then
+        unformatted=$(gofmt -s -l .)
+        if [ -n "$unformatted" ]; then
           echo "Code is not formatted properly:"
-          gofmt -s -l .
+          echo "$unformatted"
           exit 1
         fi
     
