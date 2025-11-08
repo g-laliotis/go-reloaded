@@ -83,6 +83,29 @@ go run ./cmd/go-reloaded --version
 
 ---
 
+## 🐳 Docker Usage
+
+**Build Docker image:**
+```bash
+make docker-build
+```
+
+**Run with Docker:**
+```bash
+make docker-run INPUT=testdata/samples/sample.txt OUTPUT=result.txt
+```
+
+**Manual Docker commands:**
+```bash
+# Build
+docker build -t go-reloaded .
+
+# Run (mount current directory as /data)
+docker run --rm -v "$(pwd):/data" go-reloaded /data/input.txt /data/output.txt
+```
+
+---
+
 ## 🚦 Usage
 
 **Basic command**
@@ -179,6 +202,8 @@ go test ./... -cover
 | `make vet` | Run static analysis |
 | `make clean` | Remove build artifacts |
 | `make clear-cache` | Clear Go build and test cache |
+| `make docker-build` | Build Docker image |
+| `make docker-run` | Run with Docker (specify INPUT/OUTPUT) |
 
 Run the help menu any time:
 ```bash
@@ -225,12 +250,14 @@ go-reloaded/
 │       ├── cases.txt       # basic test cases
 │       ├── punctuation.txt # punctuation examples
 │       └── sample.txt      # sample input
+├── .dockerignore           # Docker build exclusions
 ├── .gitignore
 ├── AGENTS.md               # technical specification
 ├── benchmark_test.go       # performance tests
 ├── CHANGELOG.md            # version history
 ├── CODE_OF_CONDUCT.md      # community guidelines
 ├── CONTRIBUTING.md         # contribution guidelines
+├── Dockerfile              # Docker containerization
 ├── edge_cases_test.go      # edge case tests
 ├── go.mod
 ├── LICENSE

@@ -1,7 +1,7 @@
 # Makefile for go-reloaded project
 APP=go-reloaded
 
-.PHONY: help run build test testcases fmt vet clean clear-cache
+.PHONY: help run build test testcases fmt vet clean clear-cache docker-build docker-run
 
 # =============================================================================
 # 🧭 HELP SYSTEM
@@ -57,3 +57,16 @@ clean: ## Remove build artifacts
 clear-cache: ## Clear Go build and test cache
 	@echo "Clearing Go cache..."
 	go clean -cache -testcache -modcache
+
+docker-build: ## Build Docker image
+	@echo "Building Docker image..."
+	docker build -t $(APP) .
+
+docker-run: ## Run with Docker (requires input/output files as volumes)
+	@echo "Usage: make docker-run INPUT=input.txt OUTPUT=output.txt"
+	@echo "Example: make docker-run INPUT=testdata/samples/sample.txt OUTPUT=result.txt"
+	@if [ -z "$(INPUT)" ] || [ -z "$(OUTPUT)" ]; then \
+		echo "Error: INPUT and OUTPUT must be specified"; \
+		exit 1; \
+	fi
+	docker run --rm -v "$(PWD):/data" $(APP) /data/$(INPUT) /data/$(OUTPUT)
