@@ -130,7 +130,7 @@ go-reloaded/
    ```bash
    git commit -m "feat: add new transformation agent"
    ```
-5. Push and create a pull request
+5. Push and create a pull request using our [PR template](.github/PULL_REQUEST_TEMPLATE.md)
 
 ## Commit Message Format
 
