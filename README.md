@@ -16,10 +16,6 @@
 > 📘 See [**AGENTS.md**](AGENTS.md) for detailed technical specification of all pipeline agents.  
 > 💻 Run `make help` for a list of available CLI commands.
 
-## 📋 TL;DR
-
-**go-reloaded** reads a text file, processes it through a pipeline of transformation agents (hex/binary conversion, case changes, punctuation fixes, article corrections), and outputs clean text. Demonstrates modular Go architecture with comprehensive testing, CI/CD, and professional documentation standards.
-
 ---
 
 ## 🧩 Overview
