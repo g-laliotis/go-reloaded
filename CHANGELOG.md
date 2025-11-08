@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhancement request template for better issue management
 - Version output example in installation documentation
 - Non-technical user guide for Docker usage
+- Comprehensive --help flag with detailed usage information and examples
 
 ### Changed
 - Updated project structure documentation to include Docker files

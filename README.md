@@ -79,10 +79,13 @@ go version
 go mod tidy
 ```
 
-**Check version**
+**Check version and help**
 ```bash
 go run ./cmd/go-reloaded --version
 # go-reloaded v1.1.0 (built with go1.22+ for darwin/amd64)
+
+go run ./cmd/go-reloaded --help
+# Shows comprehensive usage information and examples
 ```
 
 ---
@@ -153,6 +156,12 @@ docker run --rm -v "$(pwd):/data" go-reloaded /data/input.txt /data/output.txt
 **Basic command**
 ```bash
 go run ./cmd/go-reloaded <input_file> <output_file>
+```
+
+**Get help**
+```bash
+go run ./cmd/go-reloaded --help
+# Shows detailed usage, examples, and agent descriptions
 ```
 
 **Example:**
