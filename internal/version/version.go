@@ -8,7 +8,7 @@ import (
 
 const (
 	// Version is the current version of go-reloaded
-	Version = "1.0.0"
+	Version = "1.1.0"
 
 	// Name is the application name
 	Name = "go-reloaded"
