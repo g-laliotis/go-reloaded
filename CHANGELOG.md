@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker testing instructions in CONTRIBUTING.md
 - Docker deployment option in PRESENTATION_GUIDE.md
 - Docker quick start in GitHub Pages
-- TL;DR section in README.md for quick project understanding
+- Improved README.md structure and professional presentation
 - Enhancement request template for better issue management
 - Version output example in installation documentation
 - Non-technical user guide for Docker usage
