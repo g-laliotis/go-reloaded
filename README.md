@@ -18,7 +18,7 @@
 
 ---
 
-## 🧩 Overview
+## 🧩 TL;DR Overview
 
 **go-reloaded** is a command-line text transformation tool written in Go using a **pipeline architecture**.
 
@@ -27,11 +27,13 @@ It reads an input text file, applies a sequence of smart transformations ("agent
 This project demonstrates clean modular Go design, testability, and readable rule-based text processing.
 
 **Professional Features:**
-- 🔒 **Security Policy** - Vulnerability reporting process
-- 🤝 **Code of Conduct** - Community guidelines
-- 📋 **Issue Templates** - Structured bug reports and feature requests
-- 🔄 **CI/CD Pipeline** - Automated testing on Go 1.22 & 1.23
-- 📚 **Comprehensive Documentation** - Technical specs and contribution guides
+- 🔒 [**Security Policy**](SECURITY.md) – clear vulnerability reporting process
+- 🤝 [**Code of Conduct**](CODE_OF_CONDUCT.md) – community & collaboration rules
+- 📋 **Issue Templates** – structured bug/feature reports
+- 🔄 **CI/CD** – automated tests on Go 1.22 & 1.23
+- 📚 [**Comprehensive Docs**](AGENTS.md) – agents spec, [contribution guide](CONTRIBUTING.md), [presentation guide](PRESENTATION_GUIDE.md)
+
+**Ideal for:** developers who want a reference implementation of a modular Go CLI with full tests, CI, Docker, and security best practices.
 
 ---
 
