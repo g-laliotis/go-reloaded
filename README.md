@@ -86,6 +86,44 @@ go run ./cmd/go-reloaded --version
 
 ## 🐳 Docker Usage
 
+### For Non-Technical Users
+
+**Step 1: Install Docker**
+- Download Docker Desktop from https://www.docker.com/products/docker-desktop/
+- Install and start Docker Desktop
+
+**Step 2: Create a test file**
+- Create a text file called `input.txt` on your Desktop
+- Add some test text like: `I have 1E (hex) apples and a orange (up)!`
+
+**Step 3: Open Terminal/Command Prompt**
+- **Windows**: Press `Win + R`, type `cmd`, press Enter
+- **Mac**: Press `Cmd + Space`, type `terminal`, press Enter
+
+**Step 4: Navigate to your Desktop**
+```bash
+# Windows
+cd Desktop
+
+# Mac
+cd Desktop
+```
+
+**Step 5: Run the transformation**
+```bash
+# Windows
+docker run --rm -v "%cd%:/data" ghcr.io/g-laliotis/go-reloaded:latest /data/input.txt /data/output.txt
+
+# Mac/Linux
+docker run --rm -v "$(pwd):/data" ghcr.io/g-laliotis/go-reloaded:latest /data/input.txt /data/output.txt
+```
+
+**Step 6: Check the result**
+- Look for `output.txt` on your Desktop
+- Open it to see the transformed text
+
+### For Developers
+
 **Using pre-built image (recommended):**
 ```bash
 # Pull and run directly from GitHub Container Registry
