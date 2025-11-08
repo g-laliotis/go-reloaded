@@ -117,7 +117,10 @@ This means all agents work the same way - they take text in, transform it, and p
 1. **GitHub Pages**: Website updates automatically when documentation changes
 2. **Release Process**: Version tags trigger automated release builds
 3. **Distribution**: Binary can be built for any platform using `make build`
-4. **Docker**: Containerized deployment with multi-stage build for production
+4. **Docker**: Automated publishing to GitHub Container Registry (GHCR)
+   - Images available at `ghcr.io/g-laliotis/go-reloaded:latest`
+   - Automatic builds on every push and release
+   - No separate Docker Hub account needed
 
 ---
 

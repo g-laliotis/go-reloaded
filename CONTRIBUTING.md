@@ -34,8 +34,11 @@ make bench                       # Benchmark tests
 make clear-cache                 # Clear Go cache
 
 # Docker testing
-make docker-build                # Build Docker image
+make docker-build                # Build Docker image locally
 make docker-run INPUT=testdata/samples/sample.txt OUTPUT=result.txt
+
+# Using published image (no build needed)
+docker run --rm -v "$(pwd):/data" ghcr.io/g-laliotis/go-reloaded:latest /data/testdata/samples/sample.txt /data/result.txt
 ```
 
 ### Code Quality

@@ -86,22 +86,22 @@ go run ./cmd/go-reloaded --version
 
 ## 🐳 Docker Usage
 
-**Build Docker image:**
+**Using pre-built image (recommended):**
+```bash
+# Pull and run directly from GitHub Container Registry
+docker run --rm -v "$(pwd):/data" ghcr.io/g-laliotis/go-reloaded:latest /data/input.txt /data/output.txt
+
+# Example with sample file
+docker run --rm -v "$(pwd):/data" ghcr.io/g-laliotis/go-reloaded:latest /data/testdata/samples/sample.txt /data/result.txt
+```
+
+**Building locally (for development):**
 ```bash
 make docker-build
-```
-
-**Run with Docker:**
-```bash
 make docker-run INPUT=testdata/samples/sample.txt OUTPUT=result.txt
-```
 
-**Manual Docker commands:**
-```bash
-# Build
+# Or manually
 docker build -t go-reloaded .
-
-# Run (mount current directory as /data)
 docker run --rm -v "$(pwd):/data" go-reloaded /data/input.txt /data/output.txt
 ```
 
@@ -203,8 +203,12 @@ go test ./... -cover
 | `make vet` | Run static analysis |
 | `make clean` | Remove build artifacts |
 | `make clear-cache` | Clear Go build and test cache |
-| `make docker-build` | Build Docker image |
+| `make docker-build` | Build Docker image locally |
 | `make docker-run` | Run with Docker (specify INPUT/OUTPUT) |
+
+**Docker Registry:**
+- **GHCR**: `ghcr.io/g-laliotis/go-reloaded:latest` (recommended)
+- **Local build**: Use `make docker-build` for development
 
 Run the help menu any time:
 ```bash
@@ -222,6 +226,7 @@ go-reloaded/
 │   │   ├── bug_report.yml      # Bug report form
 │   │   └── feature_request.yml # Feature request form
 │   ├── workflows/
+│   │   ├── docker.yml          # Docker build and publish to GHCR
 │   │   ├── pages.yml           # GitHub Pages deployment
 │   │   └── test.yml            # CI/CD testing workflow
 │   └── PULL_REQUEST_TEMPLATE.md # Pull request template

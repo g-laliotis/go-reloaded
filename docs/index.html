@@ -63,9 +63,8 @@
 cd go-reloaded
 go run ./cmd/go-reloaded input.txt output.txt
 
-# Or with Docker
-make docker-build
-make docker-run INPUT=input.txt OUTPUT=output.txt</div>
+# Or with Docker (no build needed)
+docker run --rm -v "$(pwd):/data" ghcr.io/g-laliotis/go-reloaded:latest /data/input.txt /data/output.txt</div>
         </div>
 
         <div class="section">

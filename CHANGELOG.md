@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dockerfile with Go builder and Alpine runtime stages
 - .dockerignore for optimized build context
 - Docker commands in Makefile (docker-build, docker-run)
+- GitHub Actions workflow for automated Docker publishing to GHCR
+- Pre-built images available at `ghcr.io/g-laliotis/go-reloaded:latest`
 - Docker usage documentation in README.md
 - Docker testing instructions in CONTRIBUTING.md
 - Docker deployment option in PRESENTATION_GUIDE.md
@@ -21,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated project structure documentation to include Docker files
 - Enhanced Makefile with containerization commands
 - Improved development workflow with Docker testing options
+- Prioritized GHCR usage over local builds in documentation
 
 ## [1.0.0] - 2025-11-02
 
