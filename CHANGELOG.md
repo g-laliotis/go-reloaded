@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-11-08
+
+### Added
+- Docker support with multi-stage build
+- Dockerfile with Go builder and Alpine runtime stages
+- .dockerignore for optimized build context
+- Docker commands in Makefile (docker-build, docker-run)
+- Docker usage documentation in README.md
+- Docker testing instructions in CONTRIBUTING.md
+- Docker deployment option in PRESENTATION_GUIDE.md
+- Docker quick start in GitHub Pages
+
+### Changed
+- Updated project structure documentation to include Docker files
+- Enhanced Makefile with containerization commands
+- Improved development workflow with Docker testing options
+
 ## [1.0.0] - 2025-11-02
 
 ### Added

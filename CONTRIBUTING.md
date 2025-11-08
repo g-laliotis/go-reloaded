@@ -32,6 +32,10 @@ make testcases                   # Comprehensive test cases (24 cases)
 go test -v ./internal/...        # Unit tests
 make bench                       # Benchmark tests
 make clear-cache                 # Clear Go cache
+
+# Docker testing
+make docker-build                # Build Docker image
+make docker-run INPUT=testdata/samples/sample.txt OUTPUT=result.txt
 ```
 
 ### Code Quality

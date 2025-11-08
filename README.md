@@ -1,6 +1,7 @@
 # 🚀 go-reloaded
 
 [![Go Version](https://img.shields.io/badge/Go-1.22+-blue?logo=go)](https://go.dev)
+[![Docker](https://img.shields.io/badge/Docker-supported-blue?logo=docker)](https://www.docker.com/)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-✓_passing-success)](#)
